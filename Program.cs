@@ -32,7 +32,6 @@ namespace Pokedex_Opgave
                     }
                     while (lc.attempts > 0);
                     break;
-
                 case 2:
                     poke.LoggedOutMenu();
                     break;

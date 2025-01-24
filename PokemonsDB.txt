@@ -1,0 +1,1 @@
+﻿Id:2,Navn:Pikachu,Type:Lightning,Styrke:5

@@ -12,7 +12,7 @@ namespace Pokedex_Opgave
     internal class Pokemon
     {
         public int MenuInput;
-        private string fileName = @"C:\Users\gisse\Desktop\PokemonsDB.txt";
+        private string fileName = @"C:\Users\xekrs\Source\Repos\Pokedex-Opgave\PokemonsDB.txt";
         public List<string> Pokemons = new List<string> { "Id:1,Navn:Charizard,Type:Fire,Styrke:10", "Id:2,Navn:Pikachu,Type:Lightning,Styrke:5", "Id:3,Navn:Bulbasaur,Type:Vand,Styrke:3", "Id:4,Navn:Vaporeon,Type:Vand,Styrke:4" };
         public void LoggedInMenu()
         {
@@ -185,7 +185,6 @@ namespace Pokedex_Opgave
             else
             {
                 Console.WriteLine("Pokemon ikke fundet.");
-
             }
             Console.ReadKey();
         }
