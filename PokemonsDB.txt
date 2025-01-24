@@ -1,1 +1,6 @@
-﻿Id:2,Navn:Pikachu,Type:Lightning,Styrke:5
+Id:2,Navn:Pikachu,Type:Lightning,Styrke:5
+Id:1,Navn:Lucas,type:ild,Styrke:109000
+Id:3,Navn:Bulbasaur,Type:Vand,Styrke:3
+Id:4,Navn:Vaporeon,Type:Vand,Styrke:4
+Id:2,Navn:Pikachu,Type:Lightning,Styrke:5
+Id:4,Navn:Vaporeon,Type:Vand,Styrke:4

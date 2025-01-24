@@ -21,7 +21,6 @@ namespace Pokedex_Opgave
                 Console.Clear();
                 Console.WriteLine("Tryk på 1. for at add pokemons\nTryk på 2. for at delete pokemons\nTryk på 3. for at redigere pokemons\nTryk 4. To see all your pokemons\nTryk på 5 for at søge efter pokemons\nTryk på 9. for at exit");
                 MenuInput = Convert.ToInt32(Console.ReadLine());
-
                 switch (MenuInput)
                 {
                     case 1:
@@ -136,10 +135,11 @@ namespace Pokedex_Opgave
         public void RedigerPokemon()
         {
             Console.WriteLine("Indtast id på pokemon du vil redigere:");
-            string pokemonId = Console.ReadLine();
+            int pokemonId = Convert.ToInt32(Console.ReadLine());
 
             var lines = File.ReadAllLines(fileName).ToList();
             var selectedPokemonIndex = lines.FindIndex(p => p.StartsWith("Id:" + pokemonId + ","));
+
 
             if (selectedPokemonIndex != -1)
             {
@@ -190,16 +190,49 @@ namespace Pokedex_Opgave
         }
         public void SePokemons()
         {
-            Console.WriteLine("Pokemons:");
-            using (StreamReader TextReader = new StreamReader(fileName))
+            Console.Clear();
+            const int pageSize = 3;
+            var lines = File.ReadAllLines(fileName).ToList();
+            int totalPages = (int)Math.Ceiling((double)lines.Count / pageSize);
+            int currentPage = 1;
+
+            while (true)
             {
-                string line;
-                while ((line = TextReader.ReadLine()) != null)
+                Console.Clear();
+                Console.WriteLine($"Pokémon List - Page {currentPage}/{totalPages}");
+                var currentPokemons = lines.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+
+                foreach (var pokemon in currentPokemons)
                 {
-                    Console.WriteLine(line);
+                    Console.WriteLine(pokemon);
+                }
+
+                Console.WriteLine("\nNavigation:");
+                if (currentPage > 1)
+                {
+                    Console.WriteLine("Tryk på venstre piltaster for at gå tilbage");
+                }
+                else if (currentPage < totalPages)
+                { 
+                    Console.WriteLine("Tryk på højre piltaster for at gå videre");
+                }
+                Console.WriteLine("Tryk på Q til at quit");
+
+                var input = Console.ReadKey(true).Key;
+
+                if (input == ConsoleKey.LeftArrow && currentPage > 1)
+                {
+                    currentPage--;
+                }
+                else if (input == ConsoleKey.RightArrow && currentPage < totalPages)
+                {
+                    currentPage++;
+                }
+                else if (input == ConsoleKey.Q)
+                {
+                    break;
                 }
             }
-            Console.ReadKey();
         }
     }
 }
