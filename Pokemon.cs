@@ -20,7 +20,15 @@ namespace Pokedex_Opgave
             {
                 Console.Clear();
                 Console.WriteLine("Tryk på 1. for at add pokemons\nTryk på 2. for at delete pokemons\nTryk på 3. for at redigere pokemons\nTryk 4. To see all your pokemons\nTryk på 5 for at søge efter pokemons\nTryk på 9. for at exit");
-                MenuInput = Convert.ToInt32(Console.ReadLine());
+                try 
+                { 
+                    MenuInput = Convert.ToInt32(Console.ReadLine()); 
+                }
+                catch 
+                {
+                    Console.WriteLine("Skriv et valid tal");  
+                }
+                
                 switch (MenuInput)
                 {
                     case 1:

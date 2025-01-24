@@ -60,6 +60,10 @@ namespace Pokedex_Opgave
                     attempts--;
                     Console.WriteLine($"Du har {attempts} forsøg tilbage");
                     Console.ReadKey();
+                    if(attempts == 0)
+                    {
+                        Environment.Exit(0 );
+                    }   
                 }
             }
         }
