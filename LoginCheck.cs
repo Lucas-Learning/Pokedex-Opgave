@@ -26,7 +26,7 @@ namespace Pokedex_Opgave
         {
             using (StreamWriter textWriter = new StreamWriter(fileName))
             {
-                string encryptedPassword = EncryptPassword("1234"); // Hardcoded password for simplicity
+                string encryptedPassword = EncryptPassword("1234");
                 textWriter.WriteLine($"Lucas,{encryptedPassword}");
             }
 

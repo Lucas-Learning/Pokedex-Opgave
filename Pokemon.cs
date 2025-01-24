@@ -19,7 +19,7 @@ namespace Pokedex_Opgave
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("Press 1. To add pokemons\nPress 2. To delete pokemons\nPress 3. To edit pokemons\nPress 4. To see all your pokemons\nTryk på 5 for at søge efter pokemons\nPress 9. To exit");
+                Console.WriteLine("Tryk på 1. for at add pokemons\nTryk på 2. for at delete pokemons\nTryk på 3. for at redigere pokemons\nTryk 4. To see all your pokemons\nTryk på 5 for at søge efter pokemons\nTryk på 9. for at exit");
                 MenuInput = Convert.ToInt32(Console.ReadLine());
 
                 switch (MenuInput)
@@ -48,7 +48,7 @@ namespace Pokedex_Opgave
         public void LoggedOutMenu()
         {
             Console.Clear();
-            Console.WriteLine("Press 1. To see all the pokemons you have\nPress 9. to quit");
+            Console.WriteLine("Tryk på 1. for at se alle pokemons der er i Database\nTryk på 9. for at exit");
             MenuInput = Convert.ToInt32(Console.ReadLine());
 
             if (MenuInput == 1)

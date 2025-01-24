@@ -13,11 +13,9 @@ namespace Pokedex_Opgave
         {
             LoginCheck lc = new LoginCheck();
             Pokemon poke = new Pokemon();
-           
             Console.WriteLine("Welcome");
-            Console.WriteLine("Press 1. to log in\nPress 2. to continue without loggin\nPress 9. to quit");
+            Console.WriteLine("Tryk på 1. for at log ind\nTryk på 2. for at forsæt uden login\nTryk på 9. for at exit");
             int menuInput = Convert.ToInt32(Console.ReadLine());
-
             switch (menuInput)
             {
                 case 1:
